@@ -1,0 +1,273 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f5f5f5;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Header styles */
+header {
+  background-color: #222;
+  padding: 20px;
+  color: #fff;
+  background-image: url(../index/images/background.webp);
+  background-repeat: no-repeat;
+  background-position: right;
+  border-radius: 40px;
+  background-position-y: -160px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+}
+
+/* Main styles */
+#hero {
+  background-image: url("hero-image.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 100px;
+  color: #fff;
+}
+
+#hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+#latest-news {
+  background-color: #fff;
+  padding: 40px;
+}
+
+.news-article {
+  margin-bottom: 20px;
+}
+
+.news-article h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.read-more {
+  color: #f44336;
+}
+
+#about-us {
+  background-color: #f5f5f5;
+  padding: 40px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #222;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  height: 300px;
+  top: 20px;
+}
+
+
+.focusBox {
+  /* 父元素设置height:100vh,能够保证元素无论是否有没有内容,高度都等于屏幕高度 */
+  height: 100vh;
+  /* 弹性布局 居中显示 */
+  display: flex;
+  justify-content: center;
+  /*  align-items常用来设置子元素垂直方向对齐方式 center 设置居中 */
+  align-items: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  height: 634px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.imgs {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.imgs img {
+  width: 100%;
+  height: 100%;
+  /* 指定元素的内容应该如何去适应指定容器的高度与宽度 */
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+}
+
+.imgs a {
+  /* 不透明度 */
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.imgs a.active {
+  opacity: 1;
+}
+
+.titles {
+  width: 350px;
+  height: 40px;
+  position: absolute;
+  top: 40px;
+  right: 5px;
+
+}
+
+.titles a {
+  display: block;
+  color: rgba(248, 247, 247, 0.993);
+  text-decoration: none;
+  width: 100%;
+  padding: 12px 20px;
+}
+
+/* 标题活动态 */
+.titles a.active {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.25) 20%,
+      transparent 90%);
+}
+
+.all-featured-news {
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* background-color: red; */
+  flex-wrap: wrap;
+  border: gray 2px solid;
+}
+
+.featured-news {
+  width: 49%;
+  height: 315px;
+  margin: 10px auto;
+  /* background-color: lightblue; */
+  border: gray 2px solid;
+}
+
+.featured-news:hover {
+  transform: scale(1.05);
+  transition: 1000ms;
+  border: 0px;
+  border-radius: 30px;
+  background-color: lightblue;
+}
+
+
+.featured-news-left {
+  width: 100px;
+  height: 315px;
+  /* background-color: green; */
+  /* border: gray 2px solid; */
+}
+
+.featured-news-right-head {
+  width: calc(100% - 100px);
+  height: 50px;
+  position: relative;
+  bottom: 315px;
+  left: 100px;
+  /* background-color: yellow; */
+}
+
+.featured-news-right>p {
+  position: relative;
+  bottom: 310px;
+  text-align: left;
+  left: 120px;
+}
+
+.featured-news-right-body {
+  width: calc(100% - 270px);
+  height: 200px;
+  /* background-color: pink; */
+  position: relative;
+  bottom: 330px;
+  left: 100px;
+}
+
+.featured-news-right>span {
+  position: relative;
+  bottom: 324px;
+  left: 130px;
+}
+
+.featured-news-right-body>a>img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.featured-news-right>span>span {
+  color: #8B8B8B;
+}
+
+.featured-news-left>img {
+  width: 80px;
+  border-radius: 40%;
+  margin: 0 auto;
+  left: 10px;
+  position: relative;
+}
+
+
+.featured-news-right-head>p {
+  line-height: 50px;
+}

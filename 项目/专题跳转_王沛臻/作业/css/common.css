@@ -1,0 +1,104 @@
+/* 头尾各页面相同样式 */
+/* 版心 */
+.wrapper {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+/* 快捷导航 */
+.shortcut {
+    height: 42px;
+    background-color: #333;
+    margin-top: 10px;
+}
+
+.shortcut .wrapper {
+    /* 右对齐 */
+    display: flex;
+    justify-content: flex-end;
+    height: 42px;
+    /* background-color: pink; */
+}
+
+.shortcut ul {
+    /* 弹性格子布局 */
+    display: flex;
+
+    /* 文字水平居中 */
+    line-height: 42px;
+}
+
+.shortcut li a {
+    /* 左右间距15 */
+    padding: 0 15px;
+    /* 边框线 */
+    border-right: 1px solid #999;
+    font-size: 14px;
+    color: white;
+}
+
+/* 最后一个没有边框线 */
+.shortcut li:last-child a {
+    border-right: 0;
+}
+
+/* 头部 */
+.header {
+    display: flex;
+    margin-top: 23px;
+    margin-bottom: 1px;
+    height: 88px;
+    background-color: #d3d3d3;
+
+}
+
+/* 导航 */
+.nav {
+    margin-top: 3px;
+    margin-right: 28px;
+    display: flex;
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav div {
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+/* 悬停横杠 */
+.nav li a {
+    padding-bottom: 3px;
+}
+
+.nav li a:hover {
+    border-bottom: 2px solid #999;
+}
+
+.nav div ul {
+    height: 30px;
+}
+
+.nav div li {
+    margin-right: 8px;
+}
+
+/* 间隔线 */
+.nav div {
+    padding: 0 25px;
+    border-right: 1px solid #999;
+    font-size: 15px;
+    color: white;
+}
+
+.nav div:last-child {
+    border-right: 0;
+}
+
+/* 去除列表默认样式 */
+ul,
+ol {
+    list-style: none;
+}

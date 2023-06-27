@@ -1,0 +1,15 @@
+.detail div {
+    width: 640px;
+    margin: 0 auto;
+}
+
+.detail img {
+    margin: 10px;
+    width: 640px;
+    height: auto;
+}
+
+.detail p {
+
+    font: 400px 1em/1.8 'PingFang SC', 'Microsoft Yahei', 'Avenir', 'Segoe UI', 'Hiragino Sans GB', STHeiti, 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
+}

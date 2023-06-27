@@ -1,0 +1,78 @@
+* {
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.focusBox {
+    /* 父元素设置height:100vh,能够保证元素无论是否有没有内容,高度都等于屏幕高度 */
+    height: 100vh;
+    /* 弹性布局 居中显示 */
+    display: flex;
+    justify-content: center;
+    /*  align-items常用来设置子元素垂直方向对齐方式 center 设置居中 */
+    align-items: center;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    height: 634px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.imgs {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.imgs img {
+    width: 100%;
+    height: 100%;
+    /* 指定元素的内容应该如何去适应指定容器的高度与宽度 */
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+}
+
+.imgs a {
+    /* 不透明度 */
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.imgs a.active {
+    opacity: 1;
+}
+
+.titles {
+    width: 350px;
+    height: 40px;
+    position: absolute;
+    top: 40px;
+    right: 5px;
+
+}
+
+.titles a {
+    display: block;
+    color: rgba(248, 247, 247, 0.993);
+    text-decoration: none;
+    width: 100%;
+    padding: 12px 20px;
+}
+
+/* 标题活动态 */
+.titles a.active {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.25) 20%,
+            transparent 90%);
+}

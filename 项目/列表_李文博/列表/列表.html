@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 20000px;
+        }
+
+        #sidebar {
+            position: fixed;
+            top: 50px;
+            right: 30px;
+            width: 60px;
+            height: 75%;
+            background-color: #333;
+            border: 2px solid red;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            overflow-y: auto;
+            transform: translateX(100%);
+            display: none;
+        }
+
+        #sidebar.visible {
+            transform: translateX(0);
+            display: block;
+        }
+
+        #sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        #sidebar li {
+            padding: 10px;
+            cursor: pointer;
+            color: #fff;
+            text-align: center;
+            border-bottom: 1px solid #777;
+        }
+
+        #sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        #sidebar li:hover {
+            background-color: #777;
+        }
+
+        #content {
+            margin-right: 60px;
+            padding: 20px;
+        }
+
+        #content h1 {
+            margin-top: 0;
+        }
+
+        .nav-item {
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .highlight {
+            background-color: red;
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border: 2px solid red;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: none;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        #back-to-top:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sidebar">
+        <ul>
+            <li id="headline" class="nav-item">头条</li>
+            <li id="news" class="nav-item">要闻</li>
+            <li id="special" class="nav-item">专题</li>
+            <li id="international" class="nav-item">国际</li>
+            <li id="social" class="nav-item">社会</li>
+            <li id="finance" class="nav-item">财经</li>
+        </ul>
+    </div>
+    <div id="content">
+        <h1>网页内容</h1>
+        <p>这里是网页的主要内容。</p>
+        <div style="height: 1000px;"></div>
+    </div>
+    <div id="back-to-top">&uarr;</div>
+
+    <script>
+        // 获取导航栏元素
+        const sidebar = document.getElementById('sidebar');
+        const headline = document.getElementById('headline');
+        const news = document.getElementById('news');
+        const special = document.getElementById('special');
+        const international = document.getElementById('international');
+        const social = document.getElementById('social');
+        const finance = document.getElementById('finance');
+        const backToTop = document.getElementById('back-to-top');
+
+        // 滚动事件处理函数
+        window.addEventListener('scroll', function () {
+            // 获取滚动距离
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // 根据滚动距离显示/隐藏导航栏和返回按钮
+            if (scrollTop >= 50) {
+                sidebar.classList.add('visible');
+                backToTop.style.display = 'block';
+            } else {
+                sidebar.classList.remove('visible');
+                backToTop.style.display = 'none';
+            }
+
+            // 根据滚动距离设置元素样式
+            if (scrollTop >= 50 && scrollTop < 200) {
+                headline.style.color = 'red';
+            } else {
+                headline.style.color = '';
+            }
+
+            if (scrollTop >= 200 && scrollTop < 400) {
+                news.style.color = 'red';
+            } else {
+                news.style.color = '';
+            }
+
+            if (scrollTop >= 400 && scrollTop < 600) {
+                special.style.color = 'red';
+            } else {
+                special.style.color = '';
+            }
+            if (scrollTop >= 600 && scrollTop < 800) {
+                international.style.color = 'red';
+            } else {
+                international.style.color = '';
+            }
+            if (scrollTop >= 800 && scrollTop < 1000) {
+                social.style.color = 'red';
+            } else {
+                social.style.color = '';
+            }
+            if (scrollTop >= 1000) {
+                finance.style.color = 'red';
+            } else {
+                finance.style.color = '';
+            }
+        });
+
+        // 点击事件处理函数
+        sidebar.addEventListener('click', function (event) {
+            const target = event.target;
+
+            // 检查点击的元素并滚动到相应位置
+            if (target === headline) {
+                window.scrollTo({ top: 70, behavior: 'smooth' });
+            } else if (target === news) {
+                window.scrollTo({ top: 200, behavior: 'smooth' });
+            } else if (target === special) {
+                window.scrollTo({ top: 400, behavior: 'smooth' });
+            } else if (target === international) {
+                window.scrollTo({ top: 600, behavior: 'smooth' });
+            } else if (target === social) {
+                window.scrollTo({ top: 800, behavior: 'smooth' });
+            } else if (target === finance) {
+                window.scrollTo({ top: 1000, behavior: 'smooth' });
+            }
+        });
+
+        // 返回顶部按钮点击事件处理函数
+        backToTop.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>
